@@ -171,7 +171,7 @@ body {
 .menu-title{
 	/*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
 	font-family: 'Tinos', serif;
-	font-size:  54px;
+	font-size:  46px;
 	padding-top: 0px;
 	color:rgb(210, 208, 208);
 	text-align: center;
@@ -179,14 +179,14 @@ body {
 	padding-bottom: 50px;
 }
 .menu-item{
-	background-color:rgb(250, 212, 147);
+	background-color:rgba(131, 131, 131, 0.5);
 	text-align:center;
 	width: 33%;
 	padding-top: 20px;
 	padding-bottom: 20px;
 
-	margin-right: 25px;
-	margin-left:25px;
+	margin-right: 50px;
+	margin-left: 50px;
 }
 
 .menu-text{
@@ -216,8 +216,8 @@ body {
 	margin-top: 5px;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	padding-left: 25px;
-	padding-right: 25px;
+	padding-left: 0px;
+	padding-right: 0px;
 	
 }
 
@@ -234,3 +234,8 @@ body {
 li{
 	text-align: left;
 	}
+
+
+.padding {
+	padding-top: 200;
+}
