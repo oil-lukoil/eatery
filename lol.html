@@ -1,11 +1,12 @@
 <html>
 
 <head>
-	<title>Ужин</title>
+	<title>Обед</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="src/style/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link rel="icon" href="img/favicon1.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -14,59 +15,92 @@
 	<div class="intro">
 		<div class="top">
 
-			<span class="company_name"><a class="link" href="index.html">Быстро и вкусно</a></span>
+			<span class="company_name"><a class="link" href="index.html"><img src="img/LOGO.ru.png"></a></span>
 			<span class="navs">
+				<a class="link" href="zavtrak.html">Завтрак</a>
+				<a class="link" href="obed.html">Обед</a>
 				<a class="link" href="lol.html">Ужин</a>
 			</span>
 		</div>
 	</div>
+
+	<div class="menu-title">
+		Обед
+	</div>
+
 	<h2>
 
 
 		<div class="about">
+			<a href="tea.html">
+				<div class="about_item">
+					<div class="about_img">
+						<img src="img/11.jpg">
+					</div>
+					<div class="about_text">
+						<div class="about_box">
+						Чай
+						</div>
+					</div>
+					<div class="about_menu">
+						Подробнее >>>
+					</div>
+			</a>
+		</div>
+		
+		<a href="salat.html">
 			<div class="about_item">
 				<div class="about_img">
-					<img src="img/11.jpg">
+					<img src="img/3.jpg">
 				</div>
 				<div class="about_text">
-					ЧАЙ
+					<div class="about_box">
+					Салат
+					</div>
 				</div>
 				<div class="about_menu">
-					В разработке >>>
+					Подробнее >>>
 				</div>
-			</div>
-			<div class="about_item">
-				<div class="about_img">
-					<img src="img/12.jpg">
-				</div>
-				<div class="about_text">
-					МАКАРОНЫ
-				</div>
-				<div class="about_menu">
-					В разработке >>>
-				</div>
-			</div>
+		</a>
+
+		</div>
+		<a href="pizza.html">
 			<div class="about_item">
 				<div class="about_img">
 					<img src="img/13.jpg">
 				</div>
 				<div class="about_text">
-					ПИЦЦА
+					<div class="about_box">
+					Пицца
+					</div>
 				</div>
 				<div class="about_menu">
-					В разработке >>>
+					Подробнее >>>
 				</div>
-			</div>
+		</a>
+		</div>
 		</div>
 	</h2>
 
 
+
+
+
+
 	<div class="footer">
+
+
 		<p class='links'>
-			<span class="link">Мой <a href="https://vk.com/lukoil_oil" target="_blank">ВК</a></span>
-			<span class="link">Мой <a href="https://steamcommunity.com/profiles/76561199040343951"
-					target="_blank">Стим</a></span>
-			<span class="link"> <a href="https://www.bsu.ru/" target="_blank">БГУ</a></span>
+
+			<span class="link">©2022 Вкусно и быстро. Designed By Oil_lukoil</span>
+			<span class="link">
+				<span class="link_s">
+					<a href="https://vk.com/lukoil_oil" target="_blank"><img src="img/VK.png"></a></span></span>
+			<span class="link"><a href="https://steamcommunity.com/profiles/76561199040343951" target="_blank"><img
+						src="img/tg.png"></a></span>
+			<span class="link"><a href="https://www.bsu.ru/" target="_blank"><img src="img/Inst.png"></a></span>
+			<span class="link"><a href="https://www.bsu.ru/" target="_blank"><img src="img/facebook.png"></a></span>
+
 		</p>
 	</div>
 
@@ -79,3 +113,105 @@
 
 
 </html>
+<script>
+	// Установите количество снежинок (больше 30 - 400 не рекомендуется)
+	var snowmax=100
+	
+	// Установите цвета снега. Добавьте столько цветов, сколько захотите
+	var snowcolor=new Array("#b9dff5","#b9dff5","#b9dff5","#b9dff5","#b9dff5")
+	
+	// Установите шрифты, которые создают снежинки. Добавьте столько шрифтов, сколько захотите
+	var snowtype=new Array("Times")
+	
+	// Установите букву, из которой будет создана ваша снежинка (recommended: * )
+	var snowletter="*"
+	
+	// Установите скорость погружения (рекомендуемые значения от 0.3 до 2)
+	var sinkspeed=0.6
+	
+	// Установите максимальный размер снежинок
+	var snowmaxsize=35
+	
+	// Установите минимальный размер снежинок
+	var snowminsize=8
+	
+	// Set 1 for all-over-snowing, set 2 for left-side-snowing
+	// Set 3 for center-snowing, set 4 for right-side-snowing
+	var snowingzone=1
+	
+	var snow=new Array()
+	var marginbottom
+	var marginright
+	var timer
+	var i_snow=0
+	var x_mv=new Array();
+	var crds=new Array();
+	var lftrght=new Array();
+	var browserinfos=navigator.userAgent
+	var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+	var ns6=document.getElementById&&!document.all
+	var opera=browserinfos.match(/Opera/)
+	var browserok=ie5||ns6||opera
+	
+	function randommaker(range) {
+	rand=Math.floor(range*Math.random())
+	return rand
+	}
+	
+	function initsnow() {
+	if (ie5 || opera) {
+	marginbottom = document.body.scrollHeight
+	marginright = document.body.clientWidth-15
+	}
+	else if (ns6) {
+	marginbottom = document.body.scrollHeight
+	marginright = window.innerWidth-15
+	}
+	var snowsizerange=snowmaxsize-snowminsize
+	for (i=0;i<=snowmax;i++) {
+	crds[i] = 0;
+	lftrght[i] = Math.random()*15;
+	x_mv[i] = 0.03 + Math.random()/10;
+	snow[i]=document.getElementById("s"+i)
+	snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+	snow[i].size=randommaker(snowsizerange)+snowminsize
+	snow[i].style.fontSize=snow[i].size+'px';
+	snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+	snow[i].style.zIndex=1000
+	snow[i].sink=sinkspeed*snow[i].size/5
+	if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+	if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+	if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+	if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+	snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+	snow[i].style.left=snow[i].posx+'px';
+	snow[i].style.top=snow[i].posy+'px';
+	}
+	movesnow()
+	}
+	
+	function movesnow() {
+	for (i=0;i<=snowmax;i++) {
+	crds[i] += x_mv[i];
+	snow[i].posy+=snow[i].sink
+	snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+	snow[i].style.top=snow[i].posy+'px';
+	
+	if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+	if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+	if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+	if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+	if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+	snow[i].posy=0
+	}
+	}
+	var timer=setTimeout("movesnow()",50)
+	}
+	
+	for (i=0;i<=snowmax;i++) {
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+	}
+	if (browserok) {
+	window.onload=initsnow
+	}
+	</script>
